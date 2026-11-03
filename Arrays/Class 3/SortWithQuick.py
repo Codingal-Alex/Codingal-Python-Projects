@@ -3,21 +3,23 @@ def quick_sort(arr):
     if len(arr) <= 1:
         return arr
 
-    # Select the last element as pivot
     pivot = arr[-1]
 
-    # Divide elements into two lists
     left = [x for x in arr[:-1] if x <= pivot]
     right = [x for x in arr[:-1] if x > pivot]
 
-    # Recursively sort both lists
     return quick_sort(left) + [pivot] + quick_sort(right)
 
 
-# Input array
-arr = [10, 7, 8, 9, 1, 5]
+n = int(input("Enter array size: "))
 
-# Sort the array
+arr = []
+print("Enter array elements:")
+
+for i in range(n):
+    arr.append(int(input()))
+
 sorted_arr = quick_sort(arr)
 
-print("Sorted array:", sorted_arr)
+print("Sorted array:")
+print(*sorted_arr)
